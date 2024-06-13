@@ -1,0 +1,9 @@
+dataSourceKey: defaultDS
+destination: example
+groupId: g1
+esMapping:
+  _index: sms_send
+  _id: uuid
+  sql: "select a.uuid as id , a.uuid, a.hotel_code as hotelcode, a.content,a.send_time,a.send_certificate from sms_send a"
+  etlCondition: "where t.c_time>={}"
+  commitBatch: 3000
