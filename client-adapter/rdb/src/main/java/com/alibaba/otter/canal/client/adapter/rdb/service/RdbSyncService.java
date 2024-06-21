@@ -259,9 +259,8 @@ public class RdbSyncService {
             return;
         }
         logger.info("-----insert operation------");
-        DbMapping dbMapping = config.getDbMapping();
-        String targetTableName=dbMapping.getTargetDb()+"."+dbMapping.getTargetTable();
-        String sourceTableName= dbMapping.getDatabase()+"."+dbMapping.getTable();
+        String targetTableName=config.getDbMapping().getTargetTable();
+        String sourceTableName = config.getDbMapping().getTable();
         String sql = (String) dml.getData().get("sql");
         String insertSql = sql.replace(sourceTableName, targetTableName);
         try {

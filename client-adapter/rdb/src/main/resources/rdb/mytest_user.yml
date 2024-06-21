@@ -6,8 +6,8 @@ concurrent: true
 dbMapping:
   database: ms_db
   table: sms_send
-  targetTable: sms_send
-  targetDb: ms_db1
+  targetTable: sms_send_2024
+  targetDb: ms_db
   targetPk:
     id: id
   mapAll: true

@@ -2,8 +2,8 @@ dataSourceKey: defaultDS
 destination: example
 groupId: g1
 esMapping:
-  _index: sms_send
+  _index: send-history-2024
   _id: uuid
-  sql: "select a.uuid as id , a.uuid, a.hotel_code as hotelcode, a.content,a.send_time,a.send_certificate from sms_send a"
+  sql: "select a.uuid, a.hotel_code as hotelCode,  a.hotel_group_code as hotelGroupCode,a.channel,a.account, a.sms_supplier as smsSupplier,a.region,a.sms_type as smsType,a.receiver,a.content,a.sms_sta as sendSta,a.category,a.scene,a.template_code as templateCode,a.operation_type as operationType,a.biz_date from sms_send a"
   etlCondition: "where t.c_time>={}"
   commitBatch: 3000
